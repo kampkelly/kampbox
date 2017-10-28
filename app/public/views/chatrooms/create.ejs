@@ -1,0 +1,23 @@
+<% layout('/layouts/master') -%>
+
+<div style="height: 40px;"></div>
+<div class="text-center">
+	<a href="/allchatrooms" class="small">Back to chatrooms</a>
+	<h2 class="text-primary mb-2">Create New Chatroom</h2>
+		<form action="/new_chatroom" method="post" class="col-12 col-sm-12 col-md-12 col-lg-12" enctype="multipart/form-data">
+		  <div class="form-group">
+			    <label for="name">Name</label>
+			    <input type="name" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Chatroom Name">
+		  </div>
+		  <div class="form-group">
+			    <label for="description">Description</label>
+			    <input type="description" class="form-control" name="description" id="description" placeholder="Desrcibe this chatroom">
+		  </div>
+		  <div class="form-group">
+			    <label for="image">Image</label>
+			    <input type="file" class="form-control" name="image" id="image">
+			     <small id="emailHelp" class="form-text text-muted">Image should not be more than 500kb.</small>
+		  </div>
+		  <button type="submit" class="btn btn-success btn-block">Create</button>
+		</form>
+</div>

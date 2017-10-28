@@ -1,0 +1,31 @@
+<% layout('/layouts/master') -%>
+
+<div style="height: 40px;"></div>
+<div class="text-center">
+	<a href="/chatrooms" class="small">Back to chatrooms</a>
+	<h1 class="text-primary mb-2">A Chatroom</h1>
+	I am <%=auth.username%>
+
+	<h3>Edit <%=chatroom.name%></h3>
+	<form action="/chatroom/<%=chatroom._id%>" method="post" class="col-12 col-sm-12 col-md-12 col-lg-12" enctype="multipart/form-data">
+		  <div class="form-group">
+			    <label for="name">Name</label>
+			    <input type="name" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Enter email" value="<%=chatroom.name%>">
+		  </div>
+		  <div class="form-group">
+			    <label for="description">Description</label>
+			    <input type="description" class="form-control" name="description" id="description" placeholder="Password" value="<%=chatroom.description%>">
+		  </div>
+		  <div class="form-group">
+			    <label for="image">Image</label>
+			    <input type="file" class="form-control" name="image" id="image" placeholder="Password" value="<%=chatroom.image%>">
+		  </div>
+		  <button type="submit" class="btn btn-success btn-block">Update</button>
+	</form>
+	<h3><%=chatroom.image%></h3>
+	<img src="../images/<%=chatroom.image%>" style="height: 200px;">
+	<img src="../images/Gospel Church.png-1507475921133.png" style="height: 200px;">
+	<img src="../images/floor-2228277_1280jpg-1507475446855.jpeg" style="height: 200px;">
+	<img src="../images/imac.jpg" style="height: 200px;">
+	
+</div>

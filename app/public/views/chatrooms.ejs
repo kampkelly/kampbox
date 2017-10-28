@@ -1,0 +1,28 @@
+<% layout('layouts/master') -%>
+
+<main class="chatrooms">
+<div style="height: 20px;"></div>
+<div class="text-center">
+	<p>Hi, <%=user.username%>,</p>
+	 <p id="sliding-welcome" class="text-nowrap p-1">join any of the chatrooms below and meet new people right now</p>
+	
+	<h4>Chat Rooms</h4>
+
+	<div class="row ml-3">
+		<%rooms.forEach(function(chatroom) {%>
+			<a href="/chatroom/<%=chatroom._id%>" class="row chatroom_row bg-light mb-3">
+				<div class="col-3">
+				  	<img src="images/chatrooms/<%=chatroom.image%>" class="img-fluid rounded-circle h-75 w-100">
+				</div>
+				<div class="col-9">
+				  	<h6 class="text-left"><%=chatroom.name%></h6>
+				  	<p class="small text-left"><%=chatroom.description%></p>
+				</div>
+			</a>
+			<a href="chatroom/<%=chatroom._id%>/edit">Edit</a>
+			<a href="chatroom/delete/<%=chatroom._id%>">Delete</a>
+		<%});%>	
+	</div>
+	
+</div>
+</main>

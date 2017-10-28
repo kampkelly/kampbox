@@ -1,0 +1,22 @@
+{
+  "name"              : "Real KampBox Pwa Website",
+  "short_name"        : "Real KampBox PWA",
+  "description"       : "Real Anonymous realtime chatting between people",
+  "start_url"         : "/",
+  "display"           : "standalone",
+  "orientation"       : "any",
+  "background_color"  : "#FAFAFA",
+  "theme_color"       : "#FAFAFA",
+  "icons": [
+    {
+      "src"           : "/logo072.png",
+      "sizes"         : "72x72",
+      "type"          : "image/png"
+    },
+    {
+      "src"           : "/logo016.png",
+      "sizes"         : "152x152",
+      "type"          : "image/png"
+    }
+  ]
+}

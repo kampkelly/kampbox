@@ -1,0 +1,36 @@
+body {
+	font-family: 'Lora', serif;
+	//font-family: 'Ubuntu', sans-serif;
+}
+
+header {
+	background: brown;
+	height: 3em;
+}
+
+.chatrooms {
+	.chatroom_row {
+		height: 80px;
+		text-decoration: none;
+		color: grey;
+	}
+	#sliding-welcome {
+		position: relative;
+		//animation: imgg 1s ease 0s infinite alternate;
+	}
+}
+.chatroom {
+	height: 95vh;
+	position: fixed;
+	#messages {
+		//height: fill-available;
+		//background: #FAFABA;
+		background: #FAFAFA;
+		overflow-y: scroll;
+	}
+}
+@keyframes imgg {
+    0%   {left: 0px;}
+    50%   {left: -50px;}
+    100%   {left: -100px;}
+}

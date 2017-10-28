@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="manifest" href="../../manifest.json">
+
+		<!--fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+
+	   <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+	   <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+	   <link rel="stylesheet" href="/css/loading_io/loading.css">
+	   <link rel="stylesheet" href="/css/loading_io/loading-btn.css">
+	    <link rel="stylesheet" href="emoji/dist/emojionearea.min.css">
+	   <link rel="stylesheet" href="/css/style1.css">
+
+		<title> <%=sitename%> </title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+				// location.href = 'http://localhost:3000';   // Take the user to a different screen here.
+				}else{
+					location.href = 'http://localhost:3000/notmobile';
+				}
+		</script>
+		
+		
+		<div id="myapp">
+			<%- include ../partials/spa_header.ejs %>
+		        <router-view></router-view>  <!--router view for changing content-->
+		</div>
+		<!-- jQuery -->
+		<% include ../partials/spa_scripts.ejs %>
+	</body>
+</html>

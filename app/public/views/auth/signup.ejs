@@ -1,0 +1,24 @@
+<% layout('/layouts/master') -%>
+
+<div style="height: 40px;"></div>
+<div class="text-center">
+	<% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+    <% } %>
+	<h2 class="text-primary mb-2">Welcome to KampBox</h2>
+		<form action="/signup" method="post" class="col-12 col-sm-12 col-md-12 col-lg-12" enctype="application/x-www-form-urlencoded">
+		  <div class="form-group">
+			    <label for="email">Email Address</label>
+			    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+			    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+		  </div>
+		  <div class="form-group">
+			    <label for="password">Password</label>
+			    <input type="password" class="form-control" name="password" id="password" placeholder="Password" value="password">
+			    <small id="passwordHelpBlock" class="form-text text-muted">
+				  Your password must be 8-20 characters long, contain letters and numbers only.
+				</small>
+		  </div>
+		  <button type="submit" class="btn btn-primary btn-block">Join Now</button>
+		</form>
+</div>

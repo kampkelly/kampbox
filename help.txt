@@ -1,0 +1,60 @@
+/Users/Runor/nodejs_sites/kampbox/app/routes
+
+{"fieldname":"image","originalname":"COL9.jpg","encoding":"7bit","mimetype":"image/jpeg","destination":"/Users/Runor/nodejs_sites/kampbox/app/public","filename":"image-1507474455893.jpeg","path":"/Users/Runor/nodejs_sites/kampbox/app/public/image-1507474455893.jpeg","size":83131}
+
+
+/*   for vueify directly in app.js file
+var fs = require("fs");
+var browserify = require('browserify');
+var vueify = require('vueify');
+ 
+browserify('app/resources/js/vue.js')
+  .transform(vueify)
+  .bundle()
+  .pipe(fs.createWriteStream("app/public/js/vue.js")); 
+*/
+
+
+////normal vueify in grunt file, didnt work as expected then
+vueify: {
+    components: {
+        files: [
+            {
+                expand: true,
+                src: "app/resources/js/vue.js",
+                dest: "app/public/js/",
+                ext: ".good.js"
+            }
+        ]
+    }
+},
+
+message, sender_username, receiver_username, 
+query by find all where sender_username == this and receiver_username == OR receiever_username == this or sender_username == this
+
+
+
+
+
+
+
+
+
+
+
+////commented it out because grunt and browserify is doing this already
+const path = require('path');
+
+module.exports = {
+   entry: './app/resources/js/vue.js',
+   output: {
+       path: path.resolve('./app/public', 'js'),
+       filename: 'new_vue.js'
+   }
+/*   resolve: {
+    alias: {
+  //    vue: 'vue/dist/vue.js'
+      vue: 'vue/dist/vue.runtime.js'
+    }
+  } */
+ }; 

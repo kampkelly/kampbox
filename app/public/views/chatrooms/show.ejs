@@ -1,0 +1,48 @@
+<% layout('/layouts/master') -%>
+
+<main class="chatroom w-100">
+<a href="/chatrooms" class="small text-left ml-2"><i class="fa fa-hand-o-left"></i> Back to chatrooms</a>
+<div class="text-center">
+	<h5><%=chatroom.name%></h5>
+</div>
+	<div class="h-100">
+		<div id="messages" class="border-bottom-0" style="height: 75vh;"> <!--messages container-->
+			<h4 class="p-2 text-justify mt-5">Hello, no messages yet, why not be the first to start the conversation and get an early reward!</h4>
+			<ul class="list-unstyled">
+				<li class="p-1 mb-1 rounded" style="background: #d0d0d0;">
+					<div class="clearfix"><small class="float-left">Sent by Me</small> <small class="float-right">2 October </small></div>
+					<p class="d-block">The boy said he is going to school today to see his aunt.</p> 
+					<div class="rw-ui-container" data-title="1" style="margin-left: 200px;"></div>
+				</li>
+				<li class="p-1 mb-1 rounded">
+					<div class="clearfix"><small class="float-left">Sent by Runor</small> <small class="float-right">2 October </small></div>
+					<p class="d-block">Okay, he has just won a few million dollars today.</p> <div class="rw-ui-container" data-title="2"  style="margin-left: 200px;"></div>
+				</li>
+				<li class="p-1 mb-1 rounded" style="background: #d0d0d0;">
+					<div class="clearfix"><small class="float-left">Sent by Me</small> <small class="float-right">2 October </small></div>
+					<p class="d-block">The boy said he is going to school today to see his aunt.</p>  <div class="rw-ui-container" data-title="3" style="margin-left: 200px;"></div>
+				</li>
+				<li class="p-1 mb-1 rounded" style="background: #d0d0d0;">
+					<div class="clearfix"><small class="float-left">Sent by Me</small> <small class="float-right">2 October </small></div>
+					<p class="d-block">The boy said he is going to school today to see his aunt.</p> <div class="rw-ui-container" data-title="4" style="margin-left: 200px;"></div>
+				</li>
+				<%chats.forEach(function(chat) {%>
+					<li class="p-1 mb-1 rounded" style="background: #d0d0d0;">
+						<div class="clearfix"><small class="float-left">Sent by someone</small> <small class="float-right"><%=chat.created_at%> </small></div>
+						<p class="d-block"><%=chat.message%></p> <div class="rw-ui-container" data-title="4" style="margin-left: 200px;"></div>
+					</li>
+				<%});%>
+			</ul>
+		</div>
+		<form action="/sendchat" method="post" name="send_chatroomform" enctype="application/x-www-form-urlencoded">
+			<input type="text" name="user_id" id="chatroom_user_id" value="<%=auth._id%>" hidden>
+			<input type="text" name="chatroom_id" id="chatroom_id" value="<%=chatroom._id%>" hidden>
+			<div class="input-group input-group-lg fixed-bottom">
+			  <input type="text" class="form-control" name="chatroom_message" id="chatroom_message" placeholder="type message..." aria-label="type message" aria-describedby="basic-addon2">
+			  <span class="input-group-btn">
+		        <button class="btn btn-secondary" type="submit"><i class="fa fa-paper-plane"></i></button>
+		      </span>
+			</div>
+		</form>
+	</div>
+</main>
