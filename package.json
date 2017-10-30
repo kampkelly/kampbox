@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prestart": "grunt",
-    "start": "node app",
+    "start": "node app/app.js",
     "predev": "grunt",
     "dev": "open http://localhost:3000 & nodemon -e css,ejs,js,json --watch app & grunt watch & webpack --watch --progress --hide-modules",
     "webpack": "webpack --watch --progress --hide-modules"
