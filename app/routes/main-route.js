@@ -75,7 +75,7 @@ router.post('/signin', passport.authenticate('local-login', {
     failureFlash : true // allow flash messages
 }));
 
-router.get('/signin', function(req, res) {
+router.get('/signin', isnotLoggedIn, function(req, res) {
   res.render('auth/signin', { message: req.flash('signinMessage') });
 });
 
@@ -91,8 +91,9 @@ router.get('/offline', function(req, res) {
 // route middleware to make sure a user is logged in
 function isLoggedIn(req, res, next) {
     // if user is authenticated in the session, carry on 
-    if (req.isAuthenticated())
+    if (req.isAuthenticated()) {
         return next();
+    }
     // if they aren't redirect them to the home page
     res.redirect('/signin');
   //  res.render('auth/signin', { message: req.flash('signupMessage') });
@@ -100,12 +101,14 @@ function isLoggedIn(req, res, next) {
 
 function isnotLoggedIn(req, res, next) {
     // if user is authenticated in the session, carry on 
-    if (req.isAuthenticated())
-    	console.log('am logged in');
-    	res.redirect('/');
+   // if (req.isAuthenticated()) {
+    if (!req.user) {
+      return next();
+    }
+   //   return next();
  //   return next();
     // if they aren't redirect them to the home page
-    return next();
+     res.redirect('/');
    // res.redirect('/');
   //  res.render('auth/signin', { message: req.flash('signupMessage') });
 }
