@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/kampbox');
+mongoose.connect('mongodb://https://kampbox.herokuapp.com//kampbox');
 var Schema = mongoose.Schema;
 var bcrypt   = require('bcrypt-nodejs');
 
