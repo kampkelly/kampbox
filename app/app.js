@@ -18,7 +18,7 @@ app.engine('ejs', engine);
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/public/views');
 
-app.locals.sitename = 'LezzTalk';
+app.locals.sitename = 'YuChat';
 
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.json());

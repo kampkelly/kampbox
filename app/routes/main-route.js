@@ -67,7 +67,7 @@ router.post('/signup', passport.authenticate('local-signup', {
     failureRedirect : '/register', // redirect back to the signup page if there is an error
     failureFlash : true // allow flash messages
 }));
-
+ 
 //signin
 router.post('/signin', passport.authenticate('local-login', {
     successRedirect : '/allchatrooms', // redirect to the secure profile section

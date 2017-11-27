@@ -76,7 +76,7 @@ var router = require('./vue-routes');
                   $('header').css("background","brown");
                   $('#navbarNavDropdown').css("background","#be3336");
                 }
-                 self.stylechange_notice = 'Hey yo! you just changed your style and got awesome!';
+                 self.stylechange_notice = 'Hey! you just changed your theme color!';
                  self.stylechanging = false;
                  self.stylechanged = true;
                   setTimeout(function(){   //timeout

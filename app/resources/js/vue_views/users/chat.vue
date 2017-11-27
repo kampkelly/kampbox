@@ -46,7 +46,7 @@
                     <form action="/sendchat" method="post" name="send_chatroomform" enctype="application/x-www-form-urlencoded" v-on:submit.prevent="sendChat()">
                         <input type="text" name="user_id" id="chatroom_user_id" v-model="auth._id" hidden>
                         <div class="input-group fixed-bottom">
-                            <textarea id="chatroom_message" placeholder="type message" v-model="message" class="form-control" style="height:20px !important;"></textarea>
+                            <textarea id="chatroom_message" placeholder="type message" v-model="message" class="form-control" style="height:39px !important;"></textarea>
                           <span class="input-group-btn">
                             <button class="btn btn-secondary" type="submit"><i class="fa fa-paper-plane"></i></button>
                           </span>
@@ -89,12 +89,13 @@ var pageauth_id;
                 self.loaded = true,
                 pageauth_id = self.auth._id,
                 juststarted(pageauth_id);
-                pressenter();
+              //  pressenter();
                 }); 
         },
         methods: {
             sendChat() {
-                 var typed_message = $('#chatroom_message').val();
+               //  var typed_message = $('#chatroom_message').val();
+                 var typed_message = this.message;
                 if(typed_message == ''){
                     return;
                 }   
@@ -107,7 +108,8 @@ var pageauth_id;
                 .then(function(response) {
                 emitprivatemessage( self.auth, self.user, self.auth.username, self.user.username, typed_message);
               //  self.message='',  //not working with emojionearea
-                $('#chatroom_message').data("emojioneArea").setText(""); // this work
+               // $('#chatroom_message').data("emojioneArea").setText(""); // this work
+                self.message = '',
                 document.querySelector('#chatroom_message').focus();
                 }); 
             },

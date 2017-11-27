@@ -40,7 +40,7 @@
                             <input type="text" name="user_id" id="chatroom_user_id" v-model="auth._id" hidden>
                         <input type="text" name="chatroom_id" id="chatroom_id" v-model="chatroom._id" hidden>
                                 <div class="input-group fixed-bottom">
-                                    <textarea id="chatroom_message" placeholder="type message" v-model="message" class="form-control" style="height:20px !important;"></textarea>
+                                    <textarea id="chatroom_message" placeholder="type message" v-model="message" class="form-control" style="height:39px !important;"></textarea>
                                     <span class="input-group-btn">
                                       <!--  <button class="btn btn-info" id="btnSend" type="submit">Send</button> -->
                                       <button class="btn btn-secondary" type="submit"><i class="fa fa-paper-plane"></i></button>
@@ -88,14 +88,15 @@ var pagechatroom_id;
                 self.loaded = true,
                 pagechatroom_id = self.chatroom._id,
                 juststarted(pagechatroom_id);
-                pressenter();
+             //   pressenter();
             }); 
         },
         methods: {
             sendChat() {
-                var self = this 
-               var typed_message = $('#chatroom_message').val();
-               console.log(typed_message);
+                var self = this
+             //  var typed_message = $('#chatroom_message').val();
+               var typed_message = this.message;
+               console.log(typed_message)
                 if(typed_message == ''){
                     return;
                 }   
@@ -109,7 +110,8 @@ var pagechatroom_id;
                 .then(function(response) {
            //     emitmessage( self.auth, self.auth._id, self.chatroom._id, typed_message);
              //   self.message='',  //old binding to message doesnt work
-                $('#chatroom_message').data("emojioneArea").setText(""); // this work
+              //  $('#chatroom_message').data("emojioneArea").setText(""); // this work
+                self.message = '',
                 document.querySelector('#chatroom_message').focus();
                 }); 
             },
@@ -124,8 +126,6 @@ var pagechatroom_id;
             }
         }
     }
-
-
 
 function emitmessage(auth, auth_id, chatroom_id, message) {
     console.log('function started');

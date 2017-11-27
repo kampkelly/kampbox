@@ -15804,7 +15804,7 @@ var router = __webpack_require__(118);
                   $('header').css("background","brown");
                   $('#navbarNavDropdown').css("background","#be3336");
                 }
-                 self.stylechange_notice = 'Hey yo! you just changed your style and got awesome!';
+                 self.stylechange_notice = 'Hey! you just changed your theme color!';
                  self.stylechanging = false;
                  self.stylechanged = true;
                   setTimeout(function(){   //timeout
@@ -16265,14 +16265,15 @@ var pagechatroom_id;
                 self.loaded = true,
                 pagechatroom_id = self.chatroom._id,
                 juststarted(pagechatroom_id);
-                pressenter();
+             //   pressenter();
             }); 
         },
         methods: {
             sendChat() {
-                var self = this 
-               var typed_message = $('#chatroom_message').val();
-               console.log(typed_message);
+                var self = this
+             //  var typed_message = $('#chatroom_message').val();
+               var typed_message = this.message;
+               console.log(typed_message)
                 if(typed_message == ''){
                     return;
                 }   
@@ -16286,7 +16287,8 @@ var pagechatroom_id;
                 .then(function(response) {
            //     emitmessage( self.auth, self.auth._id, self.chatroom._id, typed_message);
              //   self.message='',  //old binding to message doesnt work
-                $('#chatroom_message').data("emojioneArea").setText(""); // this work
+              //  $('#chatroom_message').data("emojioneArea").setText(""); // this work
+                self.message = '',
                 document.querySelector('#chatroom_message').focus();
                 }); 
             },
@@ -16301,8 +16303,6 @@ var pagechatroom_id;
             }
         }
     }
-
-
 
 function emitmessage(auth, auth_id, chatroom_id, message) {
     console.log('function started');
@@ -16986,7 +16986,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "form-control",
-                    staticStyle: { height: "20px !important" },
+                    staticStyle: { height: "39px !important" },
                     attrs: {
                       id: "chatroom_message",
                       placeholder: "type message"
@@ -17185,12 +17185,13 @@ var pageauth_id;
                 self.loaded = true,
                 pageauth_id = self.auth._id,
                 juststarted(pageauth_id);
-                pressenter();
+              //  pressenter();
                 }); 
         },
         methods: {
             sendChat() {
-                 var typed_message = $('#chatroom_message').val();
+               //  var typed_message = $('#chatroom_message').val();
+                 var typed_message = this.message;
                 if(typed_message == ''){
                     return;
                 }   
@@ -17203,7 +17204,8 @@ var pageauth_id;
                 .then(function(response) {
                 emitprivatemessage( self.auth, self.user, self.auth.username, self.user.username, typed_message);
               //  self.message='',  //not working with emojionearea
-                $('#chatroom_message').data("emojioneArea").setText(""); // this work
+               // $('#chatroom_message').data("emojioneArea").setText(""); // this work
+                self.message = '',
                 document.querySelector('#chatroom_message').focus();
                 }); 
             },
@@ -17647,7 +17649,7 @@ var render = function() {
                     }
                   ],
                   staticClass: "form-control",
-                  staticStyle: { height: "20px !important" },
+                  staticStyle: { height: "39px !important" },
                   attrs: {
                     id: "chatroom_message",
                     placeholder: "type message"
