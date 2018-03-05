@@ -4,7 +4,7 @@ let routes = [
 	{
 		path: '/',
 		component: require('./vue_views/home.vue')
-	},
+	}, 
 	{
 		path: '/chatroom/:id',
 		component: require('./vue_views/chatrooms/show.vue')

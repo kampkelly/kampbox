@@ -3,7 +3,7 @@
 
 const
   version = '1.0.0',
-  CACHE = version + '::RealKampBox-PWAsite',
+  CACHE = version + '::RealKampBox-PWAsit',
   offlineURL = '/offline/',
   installFilesEssential = [
     '/',

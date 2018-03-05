@@ -13,7 +13,7 @@
                         <div class="col-3">
                             <img :src="'images/chatrooms/' + chatroom.image" class="img-fluid rounded-circle h-75 w-100">
                         </div>
-                        <div class="col-9">
+                        <div class="col-9"> 
                             <h6 class="text-left">{{chatroom.name}}</h6>
                             <p class="small text-left">{{chatroom.description}}</p>
                         </div>

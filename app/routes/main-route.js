@@ -34,7 +34,7 @@ router.post('/chatroom/:id', isLoggedIn, function(req, res) {
 router.get('/chatroom/new', isLoggedIn, function(req, res) {
   res.render('chatrooms/create', {user: 'game'});
 });
-
+ 
 router.get('/chatroom/:id/edit', isLoggedIn, function(req, res) {
     Chatroom.edit(req.params.id, req.user, res);
 });
@@ -44,7 +44,7 @@ router.get('/chatroom/:id/edit', isLoggedIn, function(req, res) {
   //res.render('chatrooms', {user: 'game'});
 }); */
 
-router.post('/chatroom/:id', isLoggedIn, function(req, res) {
+router.post('/chatroom/update/:id', isLoggedIn, function(req, res) {
     Chatroom.update(req.params.id, req, req.user, res);
 });
 

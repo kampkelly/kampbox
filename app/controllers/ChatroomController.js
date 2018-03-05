@@ -135,9 +135,10 @@ class ChatroomController extends fileuploads {
 		  if (err) throw err;
 		  res.render('chatrooms/edit', {chatroom, auth});
 		});
-	}
+	} 
 
 	update(id, req, auth, res) {
+		console.log('update action');
 		var self = this;
 		var Storage = multer.diskStorage({
 		      destination: function (req, file, callback) {
@@ -180,7 +181,7 @@ class ChatroomController extends fileuploads {
 				      }
 				  ], function callback (err, chatroom) {
 				  	console.log('i have received');
-				   	res.redirect('/chatroom/'+ id);
+				   	res.redirect('/allchatrooms#/chatroom/'+ id);
 				});
 	    });
 

@@ -8,7 +8,7 @@
             </router-link>
             <div class="text-center">
                 <h5>{{chatroom.name}}</h5>{{message}}
-               
+               <a :href="'/chatroom/' + chatroom._id + '/edit'">Edit</a>
             </div>
                 <div class="h-100">
                     <div id="messages" class="border-bottom-0" style="height: 75vh;"> <!--messages container-->
@@ -56,7 +56,7 @@
 </template>
 
 <script>
-var moment = require('moment');
+var moment = require('moment'); 
 var socket = io();
 var pagechatroom_id;
 

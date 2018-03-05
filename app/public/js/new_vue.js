@@ -15827,7 +15827,7 @@ let routes = [
 	{
 		path: '/',
 		component: __webpack_require__(119)
-	},
+	}, 
 	{
 		path: '/chatroom/:id',
 		component: __webpack_require__(122)
@@ -16233,7 +16233,7 @@ if (false) {(function () {
 //
 //
 
-var moment = __webpack_require__(0);
+var moment = __webpack_require__(0); 
 var socket = io();
 var pagechatroom_id;
 
@@ -16728,7 +16728,12 @@ var render = function() {
         _vm._v(" "),
         _c("div", { staticClass: "text-center" }, [
           _c("h5", [_vm._v(_vm._s(_vm.chatroom.name))]),
-          _vm._v(_vm._s(_vm.message) + "\n           \n        ")
+          _vm._v(_vm._s(_vm.message) + "\n           "),
+          _c(
+            "a",
+            { attrs: { href: "/chatroom/" + _vm.chatroom._id + "/edit" } },
+            [_vm._v("Edit")]
+          )
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "h-100" }, [
