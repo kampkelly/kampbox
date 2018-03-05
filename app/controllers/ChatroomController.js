@@ -188,7 +188,7 @@ class ChatroomController extends fileuploads {
 	}
 
 	upda(id, details, auth, res) {
-		//copy image to path
+		//copy image to path //
 	//	var src = path.join(__dirname, details.image);
 	/*	var src = path.join(__dirname, 'linux.txt');
 		var destDir = path.join(__dirname, 'game.txt');
