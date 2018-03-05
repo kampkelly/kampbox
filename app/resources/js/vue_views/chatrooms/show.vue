@@ -173,7 +173,7 @@ function emitmessage(auth, auth_id, chatroom_id, message) {
 
         function thisroute() {
             console.log('i can now click user_click');
-        }
+        } 
         function swala(username) {
              swal({
                   html:
