@@ -8,7 +8,7 @@ var fs = require('fs');
 var path = require('path');
 var async = require('asyncawait/async');
 var await = require('asyncawait/await');
-var db = mongoose.connect('mongodb://localhost:27017/kampbox', {
+var db = mongoose.connect('mongodb://kamp:sweetie@ds253468.mlab.com:53468/kampbox_mychat', {
   useMongoClient: true
 });
 //var async = require("async");

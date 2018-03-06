@@ -3,7 +3,7 @@ var Chatroom = require('../models/Chatroom');
 var Chat = require('../models/Chat');
 var PrivateChat = require('../models/PrivateChat');
 var mongoose = require('mongoose');
-var db = mongoose.connect('mongodb://localhost:27017/kampbox', {
+var db = mongoose.connect('mongodb://kamp:sweetie@ds253468.mlab.com:53468/kampbox_mychat', {
   useMongoClient: true
 });
 var async = require("async");
